@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- =
+     ==============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Detail Pesanan</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="assets/css/theme.css" rel="stylesheet" />
+   
+
+  <style>
+    
+    :root {
+      --primary: #FFB30E;
+      --secondary: #fef6e4;
+      --text-dark: #332f2c;
+      --text-light: #6b5e57;
+      --accent: #FFB30E;
+      --card-bg: ##FFB30E;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--secondary);
+      color: var(--text-dark);
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+
+    .status-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .status-tab {
+      background-color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px var(--shadow);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+
+    .status-tab.active {
+      border-bottom: 3px solid var(--primary);
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .orders-container {
+      display: none;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .orders-container.active {
+      display: flex;
+    }
+
+    .order-card {
+      background-color: var(--card-bg);
+      width: 300px;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px var(--shadow);
+      transition: 0.3s ease;
+      border-left: 4px solid var(--primary);
+    }
+
+    .order-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .order-header {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: var(--primary);
+    }
+
+    .order-body {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .order-footer {
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-detail {
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .btn-detail:hover {
+      background-color: #991616;
+    }
+    .btn-white {
+    background-color: #ffffff;
+    color: #F17228;
+    font-weight: 600;
+    border: 2px solid #F17228;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .btn-white:hover {
+    background-color: #F17228;
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(241, 114, 40, 0.4);
+  }
+
+  .shadow-warning {
+    box-shadow: 0 4px 10px rgba(241, 114, 40, 0.3);
+  }
+
+  .text-warning {
+    color: #F17228 !important;
+  }
+
+  .text-warning:hover {
+    color: #ffffff !important;
+  }
+  </style>
+</head>
+<body>
+   <a href="coba.html" class="btn btn-white shadow-warning text-warning mb-4">
+  <i class="fas fa-arrow-left me-2"></i>Kembali
+</a>
+
+<h1>Detail Pesanan Anda</h1>
+
+  <div class="status-tabs">
+    <div class="status-tab active" data-tab="dimasak">Sedang Dimasak</div>
+    <div class="status-tab" data-tab="dikirim">Dikirim</div>
+    <div class="status-tab" data-tab="selesai">Selesai</div>
+  </div>
+
+  <!-- Sedang Dimasak -->
+  <div class="orders-container active" id="dimasak">
+    <div class="order-card">
+      <div class="order-header">#TRX-001</div>
+      <div class="order-body">Nasi Campur + Es Teh</div>
+      <div class="order-footer">
+        <span>Rp 14.000</span>
+        <button class="btn-detail">Detail</button>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="order-header">#TRX-002</div>
+      <div class="order-body">Nasi Pecel + Kopi Susu</div>
+      <div class="order-footer">
+        <span>Rp 12.000</span>
+        <button class="btn-detail">Detail</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dikirim -->
+  <div class="orders-container" id="dikirim">
+    <div class="order-card">
+      <div class="order-header">#TRX-003</div>
+      <div class="order-body">Nasi Kuning + Gula Aren</div>
+      <div class="order-footer">
+        <span>Rp 15.000</span>
+        <button class="btn-detail">Detail</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selesai -->
+  <div class="orders-container" id="selesai">
+    <div class="order-card">
+      <div class="order-header">#TRX-000</div>
+      <div class="order-body">Nasi Pelasan + Es Lemon</div>
+      <div class="order-footer">
+        <span>Rp 19.000</span>
+        <button class="btn-detail">Detail</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.status-tab');
+    const containers = document.querySelectorAll('.orders-container');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        containers.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        const target = document.getElementById(tab.dataset.tab);
+        target.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

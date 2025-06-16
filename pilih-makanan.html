@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pilih Makanan</title>
+  <link href="assets/css/pilih-makanan.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="topbar">
+  <div class="logo">
+    🏪 <span>Warung Makan Septiya</span>
+  </div>
+
+  <div class="lokasi">
+    <strong>Kirim ke:</strong>
+    <span class="icon-lokasi">📍</span>
+    <span>lokasi saat ini <strong>POLITEKNIK NEGERI JEMBER</strong></span>
+  </div>
+
+  <div class="pencarian">
+    <span class="icon-cari">🔍</span>
+    <input type="text" placeholder="Cari Makanan">
+  </div>
+
+  <button id="lihatKeranjangBtn" class="keranjang-btn">
+    🛒 Keranjang (<span id="totalItem">0</span>)
+  </button>
+</header>
+
+
+  <main>
+    <div class="menu-container" id="menuList">
+      <!-- Makanan akan muncul via JavaScript -->
+    </div>
+  </main>
+
+  <div class="keranjang-popup" id="keranjangPopup">
+    <h2>Keranjang Saya</h2>
+    <ul id="daftarKeranjang"></ul>
+    <button class="tutup-btn" onclick="tutupKeranjang()">Tutup</button>
+  </div>
+
+  <script>
+    const menuMakanan = [
+      { id: 1, nama: "Nasi Campur", harga: 10000, gambar: "assets/img/gallery/nasicampur.jpg" },
+      { id: 2, nama: "Rujak Nasi", harga: 7000, gambar: "assets/img/gallery/rujaknasi.jpg" },
+      { id: 3, nama: "Nasi Pecel", harga: 7000, gambar: "assets/img/gallery/nasipecel.jpg" },
+      { id: 4, nama: "Nasi Kuning", harga: 10000, gambar: "assets/img/gallery/nasikuning.jpg" },
+      { id: 5, nama: "Nasi Jagung Tongkol", harga: 12000, gambar: "assets/img/gallery/nasijagung.jpg" }
+    ];
+
+    const keranjang = [];
+
+    function renderMenu() {
+      const menuList = document.getElementById("menuList");
+      menuList.innerHTML = "";
+      menuMakanan.forEach(makanan => {
+        const card = document.createElement("div");
+        card.className = "menu-card";
+        card.innerHTML = `
+          <img src="${makanan.gambar}" alt="${makanan.nama}">
+          <h3>${makanan.nama}</h3>
+          <p class="label">⭐ Terlaris</p>
+          <p><strong>IDR ${makanan.harga.toLocaleString()}</strong></p>
+          <button class="btn-pesan" onclick="tambahKeKeranjang(${makanan.id})">Pesan sekarang</button>
+        `;
+        menuList.appendChild(card);
+      });
+    }
+
+    function tambahKeKeranjang(id) {
+      const item = menuMakanan.find(m => m.id === id);
+      keranjang.push(item);
+      document.getElementById("totalItem").textContent = keranjang.length;
+    }
+
+    function tampilkanKeranjang() {
+      const popup = document.getElementById("keranjangPopup");
+      const list = document.getElementById("daftarKeranjang");
+      list.innerHTML = "";
+      keranjang.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nama} - IDR ${item.harga.toLocaleString()}`;
+        list.appendChild(li);
+      });
+      popup.style.display = "block";
+    }
+
+    function tutupKeranjang() {
+      document.getElementById("keranjangPopup").style.display = "none";
+    }
+
+    document.getElementById("lihatKeranjangBtn").addEventListener("click", tampilkanKeranjang);
+
+    renderMenu();
+  </script>
+</body>
+</html>

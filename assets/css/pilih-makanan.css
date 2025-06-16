@@ -1,0 +1,175 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffbe6;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  color: #ff6600;
+}
+
+#lihatKeranjangBtn {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 180px;
+  text-align: center;
+  padding: 15px;
+}
+
+.menu-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.label {
+  color: orange;
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.btn-pesan {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.btn-pesan:hover {
+  background-color: #e65c00;
+}
+
+.keranjang-popup {
+  display: none;
+  position: fixed;
+  right: 30px;
+  top: 100px;
+  width: 300px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.keranjang-popup h2 {
+  margin-top: 0;
+}
+
+.keranjang-popup ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.keranjang-popup li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.tutup-btn {
+  background-color: #ccc;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* Header utama */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f9f9fb;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+  flex-wrap: wrap;
+}
+
+/* Logo kiri */
+.topbar .logo {
+  font-size: 1.4rem;
+  color: orange;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Lokasi pengiriman */
+.topbar .lokasi {
+  flex: 1;
+  margin: 0 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.topbar .lokasi .icon-lokasi {
+  color: orange;
+}
+
+/* Pencarian */
+.topbar .pencarian {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-right: 20px;
+}
+
+.topbar .pencarian input {
+  border: none;
+  outline: none;
+  padding: 6px;
+  font-size: 0.9rem;
+}
+
+/* Tombol Keranjang */
+.keranjang-btn {
+  background-color: #fff5e6;
+  color: orange;
+  font-weight: bold;
+  border: 1px solid #ffd9b3;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.keranjang-btn:hover {
+  background-color: #ffe0b3;
+}

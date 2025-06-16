@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Pembayaran </title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="assets/css/theme.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #fff8f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #checkoutSection {
+      padding: 30px 0;
+    }
+
+    #checkoutSection .card {
+      border: 1px solid #F17228;
+      border-radius: 1rem;
+      background-color: #fff;
+    }
+
+    #checkoutSection .card-header {
+      background-color: #F17228;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+
+    #checkoutSection .form-label {
+      font-weight: 500;
+    }
+
+    #checkoutSection .form-control,
+    #checkoutSection .form-select {
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    .btn-pay {
+      background-color: #F17228;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-pay:hover {
+      background-color: #d55c15;
+      transform: scale(1.02);
+    }
+
+    #qrisSection img {
+      max-width: 200px;
+      border-radius: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      #checkoutSection .card {
+        margin: 0 10px;
+      }
+    }
+
+    /* Bagian Sukses */
+    #successPage {
+      display: none;
+      padding: 80px 20px;
+      background-color: #fff;
+      min-height: 60vh;
+    }
+
+    .checkmark-container {
+      width: 100px;
+      height: 100px;
+      background-color: #F17228;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+      animation: popIn 0.5s ease;
+    }
+
+    .checkmark {
+      font-size: 48px;
+      color: white;
+      animation: bounce 0.5s ease;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #successPage h2 {
+      color: #F17228;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .btn-back {
+      background-color: #F17228;
+      color: white;
+      padding: 10px 25px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #d55c15;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <a href="coba.html" class="btn btn-white shadow-warning text-warning mb-4">
+  <i class="fas fa-arrow-left me-2"></i>Kembali
+</a>
+
+  <!-- SECTION PEMBAYARAN -->
+  <section id="checkoutSection">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          <div class="card shadow">
+            <div class="card-header">
+              <h4 class="mb-0">Pembayaran</h4>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush mb-4">
+                <li class="list-group-item">Total Item: <strong>3</strong></li>
+                <li class="list-group-item">Total Harga: <strong>IDR 27.000</strong></li>
+              </ul>
+
+              <!-- Nama Pelanggan -->
+              <div class="mb-3">
+                <label for="namaPelanggan" class="form-label">Nama Pelanggan</label>
+                <input type="text" class="form-control" id="namaPelanggan" placeholder="Masukkan nama " />
+              </div>
+
+                            <!-- Alamat -->
+              <div class="mb-3">
+                <label for="alamatPelanggan" class="form-label">Alamat</label>
+                <input type="text" class="form-control" id="alamatPelanggan" placeholder="Masukkan alamat pengiriman" />
+              </div>
+
+              <!-- Nomor Telepon -->
+              <div class="mb-3">
+                <label for="teleponPelanggan" class="form-label">Nomor Telepon</label>
+                <input type="tel" class="form-control" id="teleponPelanggan" placeholder="08xxxxxxxxxx" />
+              </div>
+
+              <!-- Metode Pembayaran -->
+              <div class="mb-3">
+                <label for="paymentMethod" class="form-label">Pilih Metode Pembayaran</label>
+                <select class="form-select" id="paymentMethod" onchange="togglePaymentDetail()">
+                  <option selected disabled>-- Pilih --</option>
+                  <option value="tunai">Tunai</option>
+                  <option value="qris">QRIS</option>
+                </select>
+              </div>
+
+              <!-- QRIS -->
+              <div id="qrisSection" style="display: none;">
+                <label class="form-label">Scan QR Code:</label>
+                <div class="text-center">
+                  <img src="assets/img/gallery/qris.jpg" alt="QRIS" class="img-fluid mb-2"/>
+                </div>
+                <p class="text-center text-muted small">Silakan scan QRIS menggunakan aplikasi e-wallet Anda.</p>
+              </div>
+
+              <!-- Tombol Bayar -->
+              <div class="d-grid mt-3">
+                <button class="btn btn-pay btn-lg" onclick="prosesBayar()">Bayar Sekarang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION SUKSES -->
+  <section id="successPage">
+    <div class="container text-center">
+      <div class="checkmark-container">
+        <div class="checkmark">&#10004;</div>
+      </div>
+      <h2>Pembayaran Berhasil</h2>
+      <p class="lead">Terima kasih atas pesanan Anda, <strong id="namaOutput"></strong>!</p>
+      <p class="text-muted">Pesanan Anda sedang diproses oleh Warung Makan Septiya.</p>
+      <a href="index.html" class="btn btn-back mt-4">Kembali ke Beranda</a>
+    </div>
+  </section>
+
+  <script>
+    function togglePaymentDetail() {
+      const selectedMethod = document.getElementById('paymentMethod').value;
+      const qrisSection = document.getElementById('qrisSection');
+      qrisSection.style.display = selectedMethod === 'qris' ? 'block' : 'none';
+    }
+
+    function prosesBayar() {
+  const nama = document.getElementById('namaPelanggan').value.trim();
+  const alamat = document.getElementById('alamatPelanggan').value.trim();
+  const telepon = document.getElementById('teleponPelanggan').value.trim();
+
+  if (nama === "" || alamat === "" || telepon === "") {
+    alert("Silakan lengkapi semua data pelanggan (nama, alamat, dan nomor telepon).");
+    return;
+  }
+
+  document.getElementById('checkoutSection').style.display = 'none';
+  document.getElementById('successPage').style.display = 'block';
+  document.getElementById('namaOutput').textContent = nama;
+}
+  </script>
+
+</body>
+</html>

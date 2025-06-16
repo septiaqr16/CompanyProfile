@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+}
+
+.team {
+  padding: 60px 0;
+  background: #FFB30E;
+  text-align: center;
+}
+
+.team h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.05),     /* bayangan tipis bawah */
+    0 10px 20px rgba(0, 0, 0, 0.08),   /* bayangan menengah */
+    0 20px 40px rgba(0, 0, 0, 0.10);   /* bayangan dalam dan tebal */
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.team-card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 8px 12px rgba(0, 0, 0, 0.1),
+    0 18px 35px rgba(0, 0, 0, 0.15),
+    0 25px 60px rgba(0, 0, 0, 0.2);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid #f0f0f0;
+  background-color: #fff;
+}
+
+.team-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  color: #333;
+  font-weight: 600;
+}
+
+.team-card p {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.social li a {
+  color: #555;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.social li a:hover {
+  color: #007bff;
+}

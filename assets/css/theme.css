@@ -52,6 +52,7 @@
   :root {
     scroll-behavior: smooth;
   }
+  
 }
 
 body {
@@ -18490,6 +18491,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .majestic-tabs .nav-item.show .nav-link {
   border-bottom-color: #F17228;
 }
+#cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 350px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transition: right 0.3s ease;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+#cart.show {
+  right: 0;
+}
+
 
 /*-----------------------------------------------
 |   User Styles

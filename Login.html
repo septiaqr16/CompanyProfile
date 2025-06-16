@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Login</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="assets/css/login.css" rel="stylesheet" />
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <form action="login.php" method="post">
+      <h1>Login</h1>
+
+      <div class="input-box">
+        <input type="text" name="username" placeholder="Nama pengguna" required>
+        <i class='bx bxs-user'></i>
+      </div>
+
+      <div class="input-box">
+        <input type="password" name="password" placeholder="Kata sandi" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+
+      <div class="remember-forgot">
+        <label><input type="checkbox"> Ingatkan saya</label>
+        <a href="forgot_password.html">Lupa kata sandi?</a>
+      </div>
+
+      <button type="submit" class="btn">Masuk</button>
+
+      <div class="register-link">
+       <p>Belum punya akun? <a href="register.html">Daftar</a></p>
+      
+      </div>
+      <div style="text-align:center; margin-top: 15px;">
+        <a href="index.html" style="text-decoration: none; color: #F17228; font-weight: 500;">
+          <i class='bx bx-arrow-back'></i> Kembali ke Beranda
+        </a>
+    </form>
+  </div>
+</body>
+
+</html>

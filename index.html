@@ -29,6 +29,7 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/coba.css" rel="stylesheet" />
 
   </head>
 
@@ -40,47 +41,76 @@
     <!-- ===============================================-->
     <main class="main" id="top">
       <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" data-navbar-on-scroll="data-navbar-on-scroll">
-        <div class="container"><a class="navbar-brand d-inline-flex" href="index.html"><img class="d-inline-block" src="assets/img/gallery/logo.svg" alt="logo" /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient">Warung Makan Septiya</span></a>
+        <div class="container"><a class="navbar-brand d-inline-flex" href="index.html"><img class="d-inline-block" src="assets/img/gallery/warung_icon_32x32.png" alt="logo" /><span class="text-1000 fs-3 fw-bold ms-2 text-gradient">Warung Makan Septiya</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
           <div class="collapse navbar-collapse border-top border-lg-0 my-2 mt-lg-0" id="navbarSupportedContent">
             <div class="mx-auto pt-5 pt-lg-0 d-block d-lg-none d-xl-block">
-              <p class="mb-0 fw-bold text-lg-center">Kirim ke: <i class="fas fa-map-marker-alt text-warning mx-2"></i><span class="fw-normal">Lokasi Saat Ini </span><span>Politeknik Negeri Jember</span></p>
-            </div>
-            <form class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0">
-              <div class="input-group-icon pe-2"><i class="fas fa-search input-box-icon text-primary"></i>
-                <input class="form-control border-0 input-box bg-100" type="search" placeholder="Cari Makanan" aria-label="Search" />
-              </div>
-              <button class="btn btn-white shadow-warning text-warning" type="submit"> <i class="fas fa-user me-2"></i>Masuk</button>
-            </form>
-          </div>
+              <p class="mb-0 fw-bold text-lg-center">
+  Lokasi : <br>
+  <i class="fas fa-map-marker-alt text-warning mx-2"></i>
+  <span class="fw-normal">anda sedang berada di</span>
+  <span id="user-location"> POLITEKNIK NEGERI JEMBER </span>
+</p>
+        </div>
+
+<!-- Form Search -->
+<div class="d-flex mt-4 mt-lg-0 ms-lg-auto ms-xl-0 align-items-center">
+  <form action="#" method="get" class="me-2 position-relative">
+    <div class="input-group-icon pe-2" style="position: relative;">
+      <i class="fas fa-search input-box-icon text-primary"></i>
+      <input
+        id="searchInput"
+        class="form-control border-0 input-box bg-100 ps-5"
+        type="search"
+        placeholder="Cari "
+        aria-label="Search"
+        oninput="handleSearchInput()"
+      />
+      <button
+        id="closeButton"
+        type="button"
+        style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: transparent; border: none; font-size: 16px; color: #1a73e8; cursor: pointer; display: none;"
+        onclick="clearSearch()"
+
+        
+      
+    </div>
+  </form>
+</div>
+
+<!-- Tombol Masuk -->
+<a href="coba.html" class="btn btn-white shadow-warning text-warning">
+  <i class="fas fa-receipt me-2"></i>Order
+</a>
+
+<!-- Tombol Masuk -->
+<a href="login.html" class="btn btn-white shadow-warning text-warning">
+  <i class="fas fa-user me-2"></i>Masuk
+</a>
+
+
+
+
         </div>
       </nav>
       <section class="py-5 overflow-hidden bg-primary" id="home">
         <div class="container">
           <div class="row flex-center">
-            <div class="col-md-5 col-lg-6 order-0 order-md-1 mt-8 mt-md-0"><a class="img-landing-banner" href="#!"><img class="img-fluid" src="assets/img/gallery/hero-header.png" alt="hero-header" /></a></div>
+            <div class="col-md-5 col-lg-6 order-0 order-md-1 mt-8 mt-md-0"><a class="img-landing-banner" href="#!"><img class="img-fluid" src="assets/img/gallery/nasi_tradisional_resized.png" alt="hero-header" /></a></div>
             <div class="col-md-7 col-lg-6 py-8 text-md-start text-center">
               <h1 class="display-1 fs-md-5 fs-lg-6 fs-xl-8 text-light">Mau Makan Apa Hari Ini?</h1>
-              <h1 class="text-800 mb-5 fs-4">silahkan pilih makanan yang Anda ingin kan<br class="d-none d-xxl-block" /> .</h1>
+              <h1 class="text-800 mb-5 fs-4">Silahkan pilih makanan yang Anda ingin kan<br class="d-none d-xxl-block" /> </h1>
               <div class="card w-xxl-75">
                 <div class="card-body">
                   <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                      <button class="nav-link active mb-3" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-motorcycle me-2"></i>pengiriman</button>
-                      <button class="nav-link mb-3" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fas fa-shopping-bag me-2"></i>penjemputan</button>
-                    </div>
-                  </nav>
-                  <div class="tab-content mt-3" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                      <form class="row gx-2 gy-2 align-items-center">
-                        <div class="col">
-                          <div class="input-group-icon"><i class="fas fa-map-marker-alt text-danger input-box-icon"></i>
-                            <label class="visually-hidden" for="inputDelivery">Alamat</label>
-                            <input class="form-control input-box form-foodwagon-control" id="inputDelivery" type="text" placeholder="Masukkan Alamat Anda" />
-                          </div>
-                        </div>
-                        <div class="d-grid gap-3 col-sm-auto">
-                          <button class="btn btn-danger" type="submit">Pilih pengiriman</button>
+
+                  <div class="alert alert-info text-center shadow-sm">
+  <h5 class="mb-2">Informasi Warung Makan Septiya</h5>
+  <div id="jam-sekarang" class="fs-4 fw-bold text-dark">--:--</div>
+  <div id="status-warung" class="fs-5 fw-semibold text-primary">Memuat status...</div>
+  <p class="mb-0">Jam Operasional: 07.00 – 11.00 & 12.00 – 18.00</p>
+</div>
+                         
                         </div>
                       </form>
                     </div>
@@ -89,7 +119,7 @@
                         <div class="col">
                           <div class="input-group-icon"><i class="fas fa-map-marker-alt text-danger input-box-icon"></i>
                             <label class="visually-hidden" for="inputPickup">Address</label>
-                            <input class="form-control input-box form-foodwagon-control" id="inputPickup" type="text" placeholder="Enter Your Address" />
+                            <input class="form-control input-box form-foodwagon-control" id="inputPickup" type="text" placeholder="pilih makanan anda" />
                           </div>
                         </div>
                         <div class="d-grid gap-3 col-sm-auto">
@@ -104,6 +134,9 @@
           </div>
         </div>
       </section>
+      </section>
+
+
 
 
       <!-- ============================================-->
@@ -111,80 +144,83 @@
       <section class="py-0">
 
         <div class="container">
+           <div class="text-center mt-3">
+  <h5 class="fw-bold fs-3 fs-lg-5 lh-sm text-center my-4">Item terpopuler</h5></div>
           <div class="row h-100 gx-2 mt-7">
             <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
               <div class="card card-span h-100">
-                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/discount-item-1.jpg" alt="..." />
+                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/nasi pecel.jpg" alt="..." />
                   <div class="card-actions">
                     <div class="badge badge-foodwagon bg-primary p-4">
                       <div class="d-flex flex-between-center">
                         <div class="text-white fs-7">10</div>
-                        <div class="d-block text-white fs-2">000 <br />
-                          <div class="fw-normal fs-1 mt-2">IDR</div>
+                        <div class="d-block text-white fs-2">%<br />
+                          <div class="fw-normal fs-1 mt-2">Disc</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">Nasi Pecel </h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger"> 6 tersedia</span></span>
+                  <h5 class="fw-bold text-1000 text-truncate">Nasi Pecel </h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger"> IDR 
+                   10.000 </span>
                 </div><a class="stretched-link" href="#"></a>
               </div>
             </div>
             <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
               <div class="card card-span h-100">
-                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/discount-item-2.png" alt="..." />
+                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/rujak nasi.jpg" alt="..." />
                   <div class="card-actions">
                     <div class="badge badge-foodwagon bg-primary p-4">
                       <div class="d-flex flex-between-center">
-                        <div class="text-white fs-7">10</div>
-                        <div class="d-block text-white fs-2">000 <br />
-                          <div class="fw-normal fs-1 mt-2">IDR</div>
+                        <div class="text-white fs-7">30</div>
+                        <div class="d-block text-white fs-2">% <br />
+                          <div class="fw-normal fs-1 mt-2">Disc</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">Rujak Lontong</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger"> 10 tersedia</span></span>
+                  <h5 class="fw-bold text-1000 text-truncate">Rujak Lontong</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger"> IDR 7.000</span></span>
                 </div><a class="stretched-link" href="#"></a>
               </div>
             </div>
             <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
               <div class="card card-span h-100">
-                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/discount-item-3.png" alt="..." />
+                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/nasi jagung tongkol.jpg" alt="..." />
                   <div class="card-actions">
                     <div class="badge badge-foodwagon bg-primary p-4">
                       <div class="d-flex flex-between-center">
-                        <div class="text-white fs-7">7</div>
-                        <div class="d-block text-white fs-2">000 <br />
-                          <div class="fw-normal fs-1 mt-2">IDR</div>
+                        <div class="text-white fs-7">20</div>
+                        <div class="d-block text-white fs-2">% <br />
+                          <div class="fw-normal fs-1 mt-2">Disc</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">Nasi Jagung Tongkol</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">8 tersedia</span></span>
+                  <h5 class="fw-bold text-1000 text-truncate">Nasi Jagung Tongkol</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">IDR 8.000</span></span>
                 </div><a class="stretched-link" href="#"></a>
               </div>
             </div>
             <div class="col-sm-6 col-lg-3 mb-3 mb-md-0 h-100 pb-4">
               <div class="card card-span h-100">
-                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/discount-item-4.png" alt="..." />
+                <div class="position-relative"> <img class="img-fluid rounded-3 w-100" src="assets/img/gallery/lalapan nila.jpg" alt="..." />
                   <div class="card-actions">
                     <div class="badge badge-foodwagon bg-primary p-4">
                       <div class="d-flex flex-between-center">
-                        <div class="text-white fs-7">15</div>
-                        <div class="d-block text-white fs-2">000 <br />
-                          <div class="fw-normal fs-1 mt-2">IDR</div>
+                        <div class="text-white fs-7">20</div>
+                        <div class="d-block text-white fs-2">%<br />
+                          <div class="fw-normal fs-1 mt-2">Disc</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="card-body px-0">
-                  <h5 class="fw-bold text-1000 text-truncate">Lalapan Ikan Bakar</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">10 tersedia</span></span>
+                  <h5 class="fw-bold text-1000 text-truncate">Lalapan Ikan Nila</h5><span class="badge bg-soft-danger py-2 px-3"><span class="fs-1 text-danger">IDR 12.000</span></span>
                 </div><a class="stretched-link" href="#"></a>
               </div>
             </div>
@@ -211,7 +247,7 @@
               <div class="row">
                 <div class="col-sm-6 col-md-3 mb-6">
                   <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/location.png" height="112" alt="..." />
-                    <h5 class="mt-4 fw-bold">Select location</h5>
+                    <h5 class="mt-4 fw-bold">Tentukan Lokasi </h5>
                     <p class="mb-md-0">Pilih lokasi dimana makanan anda akan di kirim.</p>
                   </div>
                 </div>
@@ -229,7 +265,7 @@
                 </div>
                 <div class="col-sm-6 col-md-3 mb-6">
                   <div class="text-center"><img class="shadow-icon" src="assets/img/gallery/meals.png" height="112" alt="..." />
-                    <h5 class="mt-4 fw-bold">Nikamti Makanan </h5>
+                    <h5 class="mt-4 fw-bold">Nikmati Makanan </h5>
                     <p class="mb-md-0">Makanan akan dibuat dan dikirim langsung kerumah anda.</p>
                   </div>
                 </div>
@@ -252,7 +288,7 @@
         <div class="container">
           <div class="row h-100">
             <div class="col-lg-7 mx-auto text-center mt-7 mb-5">
-              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm">Item Terpopuler</h5>
+              <h5 class="fw-bold fs-3 fs-lg-5 lh-sm">Menu Lainnya</h5>
             </div>
             <div class="col-12">
               <div class="carousel slide" id="carouselPopularItems" data-bs-touch="false" data-bs-interval="false">
@@ -260,46 +296,48 @@
                   <div class="carousel-item active" data-bs-interval="10000">
                     <div class="row gx-3 h-100 align-items-center">
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/cheese-burger.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/nasi campur.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Nasi campur</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Nasi Campur Madura</span></div><span class="text-1000 fw-bold">IDR.10.000</span>
+                            <div><span class="text-warning me-2">
+                            <img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span>
+                            <span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 10.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/toffes-cake.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/rujak nasi.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">Wedang jahe</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Minuman Tradisional</span></div><span class="text-1000 fw-bold">IDR 3.000</span>
+                            <h5 class="fw-bold text-1000 text-truncate mb-1">Rujak nasi </h5>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 7.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/dancake.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/nasi pecel.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Nasi Pecel</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Cake World</span></div><span class="text-1000 fw-bold">$1.99</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 7.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/capucino_cropped.jpg" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/nasi kuning.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">Capucino</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Fastfood Dine</span></div><span class="text-1000 fw-bold">$3.00</span>
+                            <h5 class="fw-bold text-1000 text-truncate mb-1">Nasi Kuning</h5>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 10.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/thai-soup.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/nasi jagung tongkol.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Nasi Jagung Tongkol</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Foody Man</span></div><span class="text-1000 fw-bold">$2.79</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 12.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
@@ -309,46 +347,46 @@
                   <div class="carousel-item" data-bs-interval="5000">
                     <div class="row gx-3 h-100 align-items-center">
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/cheese-burger.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/gula aren.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Gula Aren</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Burger Arena</span></div><span class="text-1000 fw-bold">$3.88</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//minuman.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Minuman Dingin</span></div><span class="text-1000 fw-bold">IDR 5.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/toffes-cake.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/es lemon_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">Rujak Nasi</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Top Sticks</span></div><span class="text-1000 fw-bold">$4.00</span>
+                            <h5 class="fw-bold text-1000 text-truncate mb-1">Es Lemon</h5>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//minuman.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Minuman Dingin</span></div><span class="text-1000 fw-bold">IDR 4.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/dancake.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/kopi susu.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Kopi Susu</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Cake World</span></div><span class="text-1000 fw-bold">$1.99</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//minuman.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Minuman Dingin</span></div><span class="text-1000 fw-bold">IDR 5.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/crispy-sandwitch.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/capucino_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">Nasi Kuning</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Fastfood Dine</span></div><span class="text-1000 fw-bold">$3.00</span>
+                            <h5 class="fw-bold text-1000 text-truncate mb-1">Cappucino</h5>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//minuman.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Minuman Dingin</span></div><span class="text-1000 fw-bold">IDR 5.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/thai-soup.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/es teh.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Es Teh</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Foody Man</span></div><span class="text-1000 fw-bold">$2.79</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//minuman.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Minuman Dingin</span></div><span class="text-1000 fw-bold">IDR 4.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
@@ -358,19 +396,19 @@
                   <div class="carousel-item" data-bs-interval="3000">
                     <div class="row gx-3 h-100 align-items-center">
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/cheese-burger.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/nasi pelasan.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Nasi Pelasan</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Burger Arena</span></div><span class="text-1000 fw-bold">$3.88</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 15.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/toffes-cake.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/lalapan nila.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">Susu Jahe</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Top Sticks</span></div><span class="text-1000 fw-bold">$4.00</span>
+                            <h5 class="fw-bold text-1000 text-truncate mb-1">Lalapan Nila</h5>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 18.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
@@ -379,7 +417,7 @@
                         <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/mie telor_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Mie Telor</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Cake World</span></div><span class="text-1000 fw-bold">$1.99</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 7.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
@@ -388,16 +426,16 @@
                         <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/ayam geprek_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Ayam Geprek</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Fastfood Dine</span></div><span class="text-1000 fw-bold">$3.00</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 10.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/es lemon_cropped.jpg" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/campur_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">Es  Lemon</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Foody Man</span></div><span class="text-1000 fw-bold">$2.79</span>
+                            <h5 class="fw-bold text-1000 text-truncate mb-1">Campur</h5>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 7.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
@@ -410,7 +448,7 @@
                         <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/ayam crispy_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Ayam Crispy</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Burger Arena</span></div><span class="text-1000 fw-bold">$3.88</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//terlaris.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Terlaris</span></div><span class="text-1000 fw-bold">IDR 5.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
@@ -419,34 +457,34 @@
                         <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/kopi hitam_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Kopi hitam</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Top Sticks</span></div><span class="text-1000 fw-bold">$4.00</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//minuman.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Minuman Hangat</span></div><span class="text-1000 fw-bold">IDR 5.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/dancake.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/susu jahe.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">Lalapan nila</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Cake World</span></div><span class="text-1000 fw-bold">$1.99</span>
+                            <h5 class="fw-bold text-1000 text-truncate mb-1">Susu Jahe</h5>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//minuman.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Minuman Hangat</span></div><span class="text-1000 fw-bold">IDR 7.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/crispy-sandwitch.png" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/teh hangat.jpg" alt="..." />
                           <div class="card-body ps-0">
                             <h5 class="fw-bold text-1000 text-truncate mb-1">Teh hangat</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">BLM TAW</span></div><span class="text-1000 fw-bold">IDR 3.000</span>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//minuman.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Minuman Hangat</span></div><span class="text-1000 fw-bold">IDR 3.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/campur_cropped.jpg" alt="..." />
+                        <div class="card card-span h-100 rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/wedang jahe.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="fw-bold text-1000 text-truncate mb-1">Campur</h5>
-                            <div><span class="text-warning me-2"><i class="fas fa-map-marker-alt"></i></span><span class="text-primary">Foody Man</span></div><span class="text-1000 fw-bold">IDR 5.000</span>
+                            <h5 class="fw-bold text-1000 text-truncate mb-1">Wedang Jahe</h5>
+                            <div><span class="text-warning me-2"><img src="assets/img/gallery//minuman.png" alt="" style="width: 20px; height: 20px;" /></span><span class="text-primary">Minuman Hangat</span></div><span class="text-1000 fw-bold">IDR 5.000</span>
                           </div>
                         </div>
                         <div class="d-grid gap-2"><a class="btn btn-lg btn-danger" href="#!" role="button">Pesan sekarang</a></div>
@@ -475,7 +513,7 @@
           </div>
           <div class="row gx-2">
             <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
-              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/food-world.png" alt="..." />
+              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/susu jahe.jpg" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">20% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
                 <div class="card-body ps-0">
                   <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/bimo-cropped-64x64.png" alt="" />
@@ -488,90 +526,90 @@
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
-              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/pizza-hub.png" alt="..." />
+              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/gula aren.jpg" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">10% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
                 <div class="card-body ps-0">
-                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/pizzahub-logo.png" alt="" />
+                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/user_64x64.png" alt="" />
                     <div class="flex-1 ms-3">
-                      <h5 class="mb-0 fw-bold text-1000">Pizza hub</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">40</span>
+                      <h5 class="mb-0 fw-bold text-1000">Febbry</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">40</span>
                     </div>
-                  </div><span class="badge bg-soft-danger p-2"><span class="fw-bold fs-1 text-danger">Opens Tomorrow</span></span>
+                  </div><span class="badge bg-soft-danger p-2"><span class="fw-bold fs-1 text-danger">Enak banget dan segar</span></span>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
-              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/donuts-hut.png" alt="..." />
+              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/wedang jahe.jpg" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">15% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
                 <div class="card-body ps-0">
-                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/donuts-hut-logo.png" alt="" />
+                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/user_64x64.png" alt="" />
                     <div class="flex-1 ms-3">
-                      <h5 class="mb-0 fw-bold text-1000">Donuts hut</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">20</span>
+                      <h5 class="mb-0 fw-bold text-1000">Nanda</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">20</span>
                     </div>
-                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Open Now</span></span>
+                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Anget di badan</span></span>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
-              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/donuthut.png" alt="..." />
+              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/teh hangat.jpg" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">15% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
                 <div class="card-body ps-0">
-                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/donut-hut-logo.png" alt="" />
+                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/user_64x64.png" alt="" />
                     <div class="flex-1 ms-3">
-                      <h5 class="mb-0 fw-bold text-1000">Donuts hut</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
+                      <h5 class="mb-0 fw-bold text-1000">Diva</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
                     </div>
-                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Open Now</span></span>
+                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Pengen lagi</span></span>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
-              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/ruby-tuesday.png" alt="..." />
+              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/nasi campur.jpg" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">10% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
                 <div class="card-body ps-0">
-                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/ruby-tuesday-logo.png" alt="" />
+                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/user_64x64.png" alt="" />
                     <div class="flex-1 ms-3">
-                      <h5 class="mb-0 fw-bold text-1000">Ruby tuesday</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
+                      <h5 class="mb-0 fw-bold text-1000">Siami</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
                     </div>
-                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Open Now</span></span>
+                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Good</span></span>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
-              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/kuakata.png" alt="..." />
+              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/mie telor_cropped.jpg" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">10% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
                 <div class="card-body ps-0">
-                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/kuakata-logo.png" alt="" />
+                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/user_64x64.png" alt="" />
                     <div class="flex-1 ms-3">
-                      <h5 class="mb-0 fw-bold text-1000">Kuakata Fried Chicken</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
+                      <h5 class="mb-0 fw-bold text-1000">Septiya</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
                     </div>
-                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Open Now</span></span>
+                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Rekomended</span></span>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
-              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/red-square.png" alt="..." />
+              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/ayam geprek_cropped.jpg" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">10% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
                 <div class="card-body ps-0">
-                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/red-square-logo.png" alt="" />
+                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/user_64x64.png" alt="" />
                     <div class="flex-1 ms-3">
-                      <h5 class="mb-0 fw-bold text-1000">Kuakata Fried Chicken</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
+                      <h5 class="mb-0 fw-bold text-1000">Suman</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
                     </div>
-                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Open Now</span></span>
+                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Pas dikantong</span></span>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-3 h-100 mb-5">
-              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/taco-bell.png" alt="..." />
+              <div class="card card-span h-100 text-white rounded-3"><img class="img-fluid rounded-3 h-100" src="assets/img/gallery/nasi jagung tongkol.jpg" alt="..." />
                 <div class="card-img-overlay ps-0"><span class="badge bg-danger p-2 ms-3"><i class="fas fa-tag me-2 fs-0"></i><span class="fs-0">10% off</span></span><span class="badge bg-primary ms-2 me-1 p-2"><i class="fas fa-clock me-1 fs-0"></i><span class="fs-0">Fast</span></span></div>
                 <div class="card-body ps-0">
-                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/taco-bell-logo.png" alt="" />
+                  <div class="d-flex align-items-center mb-3"><img class="img-fluid" src="assets/img/gallery/user_64x64.png" alt="" />
                     <div class="flex-1 ms-3">
-                      <h5 class="mb-0 fw-bold text-1000">Taco bell</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
+                      <h5 class="mb-0 fw-bold text-1000">Siti Aminah</h5><span class="text-primary fs--1 me-1"><i class="fas fa-star"></i></span><span class="mb-0 text-primary">50</span>
                     </div>
-                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">Open Now</span></span>
+                  </div><span class="badge bg-soft-success p-2"><span class="fw-bold fs-1 text-success">suka banget</span></span>
                 </div>
               </div>
             </div>
-            <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="#!">View All <i class="fas fa-chevron-right ms-2"> </i></a></div>
+            <div class="col-12 d-flex justify-content-center mt-5"> <a class="btn btn-lg btn-primary" href="#!">Lihat Semua <i class="fas fa-chevron-right ms-2"> </i></a></div>
           </div>
         </div>
       </section>
@@ -586,58 +624,86 @@
             <div class="col-lg-7">
               <h5 class="fw-bold fs-3 fs-lg-5 lh-sm text-center text-lg-start">Cari Berdasarkan Makanan</h5>
             </div>
-            <div class="col-lg-4 text-lg-end text-center"><a class="btn btn-lg text-800 me-2" href="#" role="button">VIEW ALL <i class="fas fa-chevron-right ms-2"></i></a></div>
+            <div class="col-lg-4 text-lg-end text-center"><a class="btn btn-lg text-800 me-2" href="#" role="button">Lihat Semua <i class="fas fa-chevron-right ms-2"></i></a></div>
             <div class="col-lg-auto position-relative">
-              <button class="carousel-control-prev s-icon-prev carousel-icon" type="button" data-bs-target="#carouselSearchByFood" data-bs-slide="prev"><span class="carousel-control-prev-icon hover-top-shadow" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
-              <button class="carousel-control-next s-icon-next carousel-icon" type="button" data-bs-target="#carouselSearchByFood" data-bs-slide="next"><span class="carousel-control-next-icon hover-top-shadow" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+              
             </div>
           </div>
-          <div class="row flex-center">
-            <div class="col-12">
-              <div class="carousel slide" id="carouselSearchByFood" data-bs-touch="false" data-bs-interval="false">
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
-                    <div class="row h-100 align-items-center">
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/search-pizza.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">pizza</h5>
-                          </div>
+         <div class="row flex-center">
+  <div class="col-12">
+    <div class="carousel slide" id="carouselSearchByFood" data-bs-touch="false" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <div class="row h-100 align-items-center">
+
+            <!-- Kartu "Aneka Nasi" dengan fungsi modal -->
+            <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+              <button type="button" class="btn p-0 border-0 bg-transparent w-100 h-100" data-bs-toggle="modal" data-bs-target="#modalAnekaNasi">
+                <div class="card card-span h-100 rounded-circle">
+                  <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/nasi kuning.jpg" alt="Aneka Nasi" />
+                  <div class="card-body ps-0">
+                    <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka nasi</h5>
+                  </div>
                         </div>
                       </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/burger.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Burger</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/noodles.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Noodles</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/sub-sandwich.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Sub-sandwiches</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/chowmein.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Chowmein</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/steak.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Steak</h5>
-                          </div>
+                     <!-- Kategori: Mie -->
+<div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+  <button type="button" class="btn p-0 border-0 bg-transparent w-100 h-100" data-bs-toggle="modal" data-bs-target="#modalMie">
+    <div class="card card-span h-100 rounded-circle">
+      <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/mie telor_cropped.jpg" alt="Mie" />
+      <div class="card-body ps-0">
+        <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Mie</h5>
+      </div>
+    </div>
+  </button>
+</div>
+
+<!-- Kategori: Ayam -->
+<div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+  <button type="button" class="btn p-0 border-0 bg-transparent w-100 h-100" data-bs-toggle="modal" data-bs-target="#modalAyam">
+    <div class="card card-span h-100 rounded-circle">
+      <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/lalapan nila.jpg" alt="Ayam" />
+      <div class="card-body ps-0">
+        <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka Lalapan</h5>
+      </div>
+    </div>
+  </button>
+</div>
+
+<!-- Kategori: Minuman Hangat -->
+<div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+  <button type="button" class="btn p-0 border-0 bg-transparent w-100 h-100" data-bs-toggle="modal" data-bs-target="#modalHangat">
+    <div class="card card-span h-100 rounded-circle">
+      <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/teh hangat.jpg" alt="Minuman Hangat" />
+      <div class="card-body ps-0">
+        <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Minuman Hangat</h5>
+      </div>
+    </div>
+  </button>
+</div>
+
+<!-- Kategori: Minuman Dingin -->
+<div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+  <button type="button" class="btn p-0 border-0 bg-transparent w-100 h-100" data-bs-toggle="modal" data-bs-target="#modalDingin">
+    <div class="card card-span h-100 rounded-circle">
+      <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/gula aren.jpg" alt="Minuman Dingin" />
+      <div class="card-body ps-0">
+        <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Minuman Dingin</h5>
+      </div>
+    </div>
+  </button>
+</div>
+<!-- Kategori: Camilan -->
+<div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+  <button type="button" class="btn p-0 border-0 bg-transparent w-100 h-100" data-bs-toggle="modal" data-bs-target="#modalCamilan">
+    <div class="card card-span h-100 rounded-circle">
+      <img class="img-fluid rounded-circle h-100" src="assets/img/gallery/noodles.png" alt="Camilan" />
+      <div class="card-body ps-0">
+        <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Camilan</h5>
+      </div>
+    </div>
+  </button>
+</div>
                         </div>
                       </div>
                     </div>
@@ -645,44 +711,44 @@
                   <div class="carousel-item" data-bs-interval="5000">
                     <div class="row h-100 align-items-center">
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/search-pizza.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/rujak nasi.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">pizza</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka Rujak</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/burger.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/wedang jahe.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Burger</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Minuman Khas</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/noodles.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/ayam geprek_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Noodles</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Makanan Pedas</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/sub-sandwich.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/mie telor_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Sub-sandwiches</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka Mie</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/chowmein.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/nasi jagung tongkol.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Chowmein</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Asli Indonesia</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/steak.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/lalapan nila.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Steak</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka Lalapan</h5>
                           </div>
                         </div>
                       </div>
@@ -691,44 +757,44 @@
                   <div class="carousel-item" data-bs-interval="3000">
                     <div class="row h-100 align-items-center">
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/search-pizza.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/nasi kuning.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">pizza</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka Nasi</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/burger.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/mie telor_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Burger</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Mie</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/ayam crispy_cropped.jpg" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka Lalapan</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/teh hangat.jpg" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Minuman Hangat</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/gula aren.jpg" alt="..." />
+                          <div class="card-body ps-0">
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Minuman Dingin</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
                         <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/noodles.png" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Noodles</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/sub-sandwich.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Sub-sandwiches</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/chowmein.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Chowmein</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/steak.png" alt="..." />
-                          <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Steak</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Camilan</h5>
                           </div>
                         </div>
                       </div>
@@ -737,44 +803,44 @@
                   <div class="carousel-item">
                     <div class="row h-100 align-items-center">
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/search-pizza.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/rujak nasi.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">pizza</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka Rujak</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/burger.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/wedang jahe.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Burger</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Minuman Khas</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/noodles.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/ayam geprek_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Noodles</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Makanan Pedas</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/sub-sandwich.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/mie telor_cropped.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Sub-sandwiches</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka Mie</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/chowmein.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/nasi jagung tongkol.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Chowmein</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Asli Indonesia</h5>
                           </div>
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4 col-xl mb-5 h-100">
-                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/steak.png" alt="..." />
+                        <div class="card card-span h-100 rounded-circle"><img class="img-fluid rounded-circle h-100" src="assets/img/gallery/lalapan nila.jpg" alt="..." />
                           <div class="card-body ps-0">
-                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Steak</h5>
+                            <h5 class="text-center fw-bold text-1000 text-truncate mb-2">Aneka Lalapan </h5>
                           </div>
                         </div>
                       </div>
@@ -785,6 +851,367 @@
             </div>
           </div>
         </div><!-- end of .container-->
+
+
+        <!-- Modal Pricelist Aneka Nasi -->
+<div class="modal fade" id="modalAnekaNasi" tabindex="-1" aria-labelledby="modalAnekaNasiLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAnekaNasiLabel">Daftar Harga Aneka Nasi</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+</div>
+<div class="modal-body">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Menu</th>
+        <th>Harga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nasi Pecel</td>
+        <td>Rp12.000</td>
+      </tr>
+      <tr>
+        <td>Nasi Campur</td>
+        <td>Rp13.000</td>
+      </tr>
+      <tr>
+        <td>Nasi Jagung</td>
+        <td>Rp10.000</td>
+      </tr>
+      <tr>
+        <td>Rujak Lontong</td>
+        <td>Rp11.000</td>
+      </tr>
+      <tr>
+        <td>Rujak Nasi</td>
+        <td>Rp11.000</td>
+      </tr>
+      <tr>
+        <td>Campur</td>
+        <td>Rp13.000</td>
+      </tr>
+      <tr>
+        <td>Nasi Pelasan</td>
+        <td>Rp12.000</td>
+      </tr>
+      <tr>
+        <td>nasi jagung tongkol</td>
+        <td>Rp10.000</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Pricelist Mie -->
+<div class="modal fade" id="modalMie" tabindex="-1" aria-labelledby="modalMieLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalMieLabel">Daftar Harga Aneka Mie</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+</div>
+<div class="modal-body">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Menu</th>
+        <th>Harga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mie Goreng</td>
+        <td>Rp10.000</td>
+      </tr>
+      <tr>
+        <td>Mie Rebus</td>
+        <td>Rp10.000</td>
+      </tr>
+      <tr>
+        <td>Mie Goreng Telur</td>
+        <td>Rp12.000</td>
+      </tr>
+      <tr>
+        <td>Mie Rebus Telur</td>
+        <td>Rp12.000</td>
+      </tr>
+      <tr>
+        <td>Mie Dok-dok</td>
+        <td>Rp13.000</td>
+      </tr>
+      <tr>
+        <td>Mie Ayam</td>
+        <td>Rp14.000</td>
+      </tr>
+      <tr>
+        <td>Mie Ayam Bakso</td>
+        <td>Rp17.000</td>
+      </tr>
+      <tr>
+        <td>Mie Kuah Pedas</td>
+        <td>Rp13.000</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+</div>
+    </div>
+  </div>
+</div>
+<!-- Modal Pricelist Ayam -->
+<div class="modal fade" id="modalAyam" tabindex="-1" aria-labelledby="modalAyamLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+     <h5 class="modal-title" id="modalLalapanLabel">Daftar Harga Aneka Lalapan</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+</div>
+<div class="modal-body">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Menu</th>
+        <th>Harga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lalapan Ayam Goreng</td>
+        <td>Rp15.000</td>
+      </tr>
+      <tr>
+        <td>Lalapan Ayam Bakar</td>
+        <td>Rp16.000</td>
+      </tr>
+      <tr>
+        <td>Lalapan Lele Goreng</td>
+        <td>Rp13.000</td>
+      </tr>
+      <tr>
+        <td>Lalapan Lele Bakar</td>
+        <td>Rp14.000</td>
+      </tr>
+      <tr>
+        <td>Lalapan Ikan Nila Goreng</td>
+        <td>Rp17.000</td>
+      </tr>
+      <tr>
+        <td>Lalapan Ikan Bakar</td>
+        <td>Rp18.000</td>
+      </tr>
+      <tr>
+        <td>Lalapan Tempe Tahu</td>
+        <td>Rp10.000</td>
+      </tr>
+      <tr>
+        <td>Lalapan Bebek Goreng</td>
+        <td>Rp20.000</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+</div>
+
+    </div>
+  </div>
+</div>
+<!-- Modal Pricelist Minuman Hangat -->
+<div class="modal fade" id="modalHangat" tabindex="-1" aria-labelledby="modalHangatLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h5 class="modal-title" id="modalMinumanHangatLabel">Daftar Harga Minuman Hangat</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+</div>
+<div class="modal-body">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Menu</th>
+        <th>Harga</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Teh Hangat</td>
+        <td>Rp4.000</td>
+      </tr>
+      <tr>
+        <td>Kopi Hitam</td>
+        <td>Rp5.000</td>
+      </tr>
+      <tr>
+        <td>Wedang Jahe</td>
+        <td>Rp6.000</td>
+      </tr>
+      <tr>
+        <td>Kopi Susu</td>
+        <td>Rp7.000</td>
+      </tr>
+      <tr>
+        <td>Susu Jahe</td>
+        <td>Rp7.000</td>
+      </tr>
+      <tr>
+        <td>Susu Hangat</td>
+        <td>Rp6.000</td>
+      </tr>
+      <tr>
+        <td>Jeruk Hangat</td>
+        <td>Rp5.000</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+</div>
+    </div>
+  </div>
+</div>
+<!-- Modal Pricelist Minuman Dingin -->
+<div class="modal fade" id="modalDingin" tabindex="-1" aria-labelledby="modalDinginLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h5 class="modal-title" id="modalMinumanDinginLabel">Daftar Harga Minuman Dingin</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Menu</th>
+              <th>Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Es Teh</td>
+              <td>Rp4.000</td>
+            </tr>
+            <tr>
+              <td>Es Jeruk</td>
+              <td>Rp5.000</td>
+            </tr>
+            <tr>
+              <td>Cappuccino Dingin</td>
+              <td>Rp8.000</td>
+            </tr>
+            <tr>
+              <td>Es Gula Aren</td>
+              <td>Rp7.000</td>
+            </tr>
+            <tr>
+              <td>Es Susu</td>
+              <td>Rp6.000</td>
+            </tr>
+            <tr>
+              <td>Es Coklat</td>
+              <td>Rp7.000</td>
+            </tr>
+            <tr>
+              <td>Es Kopi Susu</td>
+              <td>Rp9.000</td>
+            </tr>
+            <tr>
+              <td>Es Susu Jahe</td>
+              <td>Rp7.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Pricelist Camilan -->
+<div class="modal fade" id="modalCamilan" tabindex="-1" aria-labelledby="modalCamilanLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCamilanLabel">Daftar Harga Camilan</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Menu</th>
+              <th>Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tempe Goreng</td>
+              <td>Rp2.000</td>
+            </tr>
+            <tr>
+              <td>Tahu Goreng</td>
+              <td>Rp2.000</td>
+            </tr>
+            <tr>
+              <td>Bakwan (Bala-bala)</td>
+              <td>Rp2.000</td>
+            </tr>
+            <tr>
+              <td>Pisang Goreng</td>
+              <td>Rp3.000</td>
+            </tr>
+            <tr>
+              <td>Cireng (Aci Goreng)</td>
+              <td>Rp3.000</td>
+            </tr>
+            <tr>
+              <td>Sosis Goreng</td>
+              <td>Rp4.000</td>
+            </tr>
+            <tr>
+              <td>Telur Gulung</td>
+              <td>Rp3.000</td>
+            </tr>
+            <tr>
+              <td>Cimol</td>
+              <td>Rp3.000</td>
+            </tr>
+            <tr>
+              <td>Makaroni Pedas</td>
+              <td>Rp3.000</td>
+            </tr>
+            <tr>
+              <td>Kerupuk Putih (Kerupuk Angin)</td>
+              <td>Rp1.000</td>
+            </tr>
+            <tr>
+              <td>Kerupuk Rambak</td>
+              <td>Rp2.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       </section>
       <!-- <section> close ============================-->
@@ -829,9 +1256,9 @@
             </div>
           </div>
           <div class="row flex-center mt-md-8">
-            <div class="col-lg-5 d-none d-lg-block" style="margin-bottom: -122px;"> <img class="w-100" src="assets/img/gallery/phone-cta-one.png" alt="..." /></div>
+            <div class="col-lg-5 d-none d-lg-block" style="margin-bottom: -122px;"> <img class="w-100" src="assets/img/gallery/icon warung.png" alt="..." /></div>
             <div class="col-lg-5 mt-7 mt-md-0">
-              <h1 class="text-primary">Install the app</h1>
+              <h1 class="text-primary">Selengkapnya Tentang Kami</h1>
               <p>It's never been easier to order food. Look for the finest <br class="d-none d-xl-block" />discounts and you'll be lost in a world of delectable food.</p><a class="pe-2" href="https://www.apple.com/app-store/" target="_blank"><img src="assets/img/gallery/app-store.svg" width="160" alt="" /></a><a href="https://play.google.com/store/apps" target="_blank"><img src="assets/img/gallery/google-play.svg" width="160" alt="" /></a>
             </div>
           </div>
@@ -849,11 +1276,11 @@
               <div class="card card-span mb-3 shadow-lg">
                 <div class="card-body py-0">
                   <div class="row justify-content-center">
-                    <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-0 order-md-1"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-end rounded-md-top-0" src="assets/img/gallery/crispy-sandwiches.png" alt="..." /></div>
+                    <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-0 order-md-1"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-end rounded-md-top-0" src="assets/img/gallery/ibu bapak.png" alt="..." /></div>
                     <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
-                      <h1 class="card-title mt-xl-5 mb-4">Best deals <span class="text-primary"> Crispy Sandwiches</span></h1>
-                      <p class="fs-1">Enjoy the large size of sandwiches. Complete your meal with the perfect slice of sandwiches.</p>
-                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
+                      <h1 class="card-title mt-xl-5 mb-4">Warung Makan<span class="text-primary"> Septiya</span></h1>
+                      <p class="fs-1">Menyajikan cita rasa rumahan khas Jawa dengan sentuhan kehangatan keluarga sejak tahun 2000. Berdiri di Tiris, Probolinggo, kami hadir dengan masakan autentik, pelayanan ramah, dan suasana yang membuat pelanggan merasa seperti di rumah sendiri.</p>
+                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">Baca Selengkapnya<i class="fas fa-chevron-right ms-2"></i></a></div>
                     </div>
                   </div>
                 </div>
@@ -879,11 +1306,21 @@
               <div class="card card-span mb-3 shadow-lg">
                 <div class="card-body py-0">
                   <div class="row justify-content-center">
-                    <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-md-0"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-start rounded-md-top-0" src="assets/img/gallery/fried-chicken.png" alt="..." /></div>
+                    <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-md-0"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-start rounded-md-top-0" src="assets/img/gallery/cita rasa.png" alt="..." /></div>
                     <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
-                      <h1 class="card-title mt-xl-5 mb-4">Celebrate parties with <span class="text-primary">Fried Chicken</span></h1>
-                      <p class="fs-1">Get the best fried chicken smeared with a lip smacking lemon chili flavor. Check out best deals for fried chicken.</p>
-                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
+                      <h1 class="card-title mt-xl-5 mb-4">Cita Rasa Asli, <span class="text-primary">Harga Bersahabat</span></h1>
+                      <p class="fs-1"><br />Warung Makan Septiya dikenal karena:
+
+                        <br />1.Bahan segar pilihan setiap hari
+                        
+                        <br />2.Resep turun-temurun khas rumahan
+                        
+                        <br />3.Pelayanan cepat & ramah
+                        
+                        <br />4.Tempat bersih dan nyaman
+                        
+                        <br />🍴 Kami percaya, makanan enak tak harus mahal. Setiap sajian kami adalah bentuk kasih sayang untuk pelanggan..</p>
+                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">Baca Selengkapnya<i class="fas fa-chevron-right ms-2"></i></a></div>
                     </div>
                   </div>
                 </div>
@@ -909,11 +1346,13 @@
               <div class="card card-span mb-3 shadow-lg">
                 <div class="card-body py-0">
                   <div class="row justify-content-center">
-                    <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-0 order-md-1"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-end rounded-md-top-0" src="assets/img/gallery/pizza.png" alt="..." /></div>
+                    <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-0 order-md-1"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-end rounded-md-top-0" src="assets/img/gallery/lebih cepat.png" alt="..." /></div>
                     <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
-                      <h1 class="card-title mt-xl-5 mb-4">Wanna eat hot & <span class="text-primary">spicy Pizza?</span></h1>
-                      <p class="fs-1">Pair up with a friend and enjoy the hot and crispy pizza pops. Try it with the best deals.</p>
-                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a></div>
+                      <h1 class="card-title mt-xl-5 mb-4">Lebih Dekat <span class="text-primary">& Cepat untuk Anda</span></h1>
+                      <p class="fs-1">📦 Pesan online, antar ke rumah
+                        <br />📍 Layanan ke Tiris, Kraksaan, Pajarakan, dan sekitarnya
+                        <br />💬 Hubungi kami untuk pesanan khusus, event, atau kerja sama!</p>
+                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">Baca Selengkapnya<i class="fas fa-chevron-right ms-2"></i></a></div>
                     </div>
                   </div>
                 </div>
@@ -922,20 +1361,43 @@
           </div>
         </div><!-- end of .container-->
 
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="card card-span mb-3 shadow-lg">
+                <div class="card-body py-0">
+                  <div class="row justify-content-center">
+                    <div class="col-md-5 col-xl-7 col-xxl-8 g-0 order-md-0"><img class="img-fluid w-100 fit-cover h-100 rounded-top rounded-md-start rounded-md-top-0" src="assets/img/gallery/koki.png" alt="..." /></div>
+                    <div class="col-md-7 col-xl-5 col-xxl-4 p-4 p-lg-5">
+                      <h1 class="card-title mt-xl-5 mb-4">Menu yang Terus <span class="text-primary">  Berkembang</span></h1>
+                      <p class="fs-1"><br />Dengan bangga kami hadirkan: <br />Kami selalu menghadirkan variasi menu yang terus berkembang sesuai selera pelanggan. Dari masakan Jawa klasik hingga kreasi kekinian, semuanya kami hadirkan untuk memanjakan lidah Anda.
+
+</p>
+                      <div class="d-grid bottom-0"><a class="btn btn-lg btn-primary mt-xl-6" href="#!">Baca Selengkapnya<i class="fas fa-chevron-right ms-2"></i></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
       </section>
       <!-- <section> close ============================-->
       <!-- ============================================-->
 
 
       <section class="py-0">
-        <div class="bg-holder" style="background-image:url(assets/img/gallery/cta-two-bg.png);background-position:center;background-size:cover;">
+        <div class="bg-holder" style="background-image:url(assets/img/gallery/Coklat\ Minimalis\ dan\ Sederhana\ Peluang\ Bisnis\ Waralaba\ Presentasi.jpg);background-position:center;background-size:cover;">
         </div>
         <!--/.bg-holder-->
 
         <div class="container">
           <div class="row flex-center">
             <div class="col-xxl-9 py-7 text-center">
-              <h1 class="fw-bold mb-4 text-white fs-6">Are you ready to order <br />with the best deals? </h1><a class="btn btn-danger" href="#"> PROCEED TO ORDER<i class="fas fa-chevron-right ms-2"></i></a>
+              <h1 class="fw-bold mb-4 text-white fs-6">Siap pesan  <br />dengan penawaran terbaik? </h1><a class="btn btn-danger" href="#"> Pesan Sekarang<i class="fas fa-chevron-right ms-2"></i></a>
             </div>
           </div>
         </div>
@@ -948,109 +1410,87 @@
 
         <div class="container">
           <div class="row justify-content-lg-between">
-            <h5 class="lh-lg fw-bold text-white">OUR TOP CITIES</h5>
+            <h5 class="lh-lg fw-bold text-white">Warung Makan Septiya</h5>
             <div class="col-6 col-md-4 col-lg-auto mb-3">
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">San Francisco</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Miami</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">San Diego</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">East Bay</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Long Beach</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg-auto mb-3">
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Los Angeles</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Washington DC</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Seattle</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Portland</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Nashville</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg-auto mb-3">
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">New York City</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Orange County</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Atlanta</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Charlotte</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Denver</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg-auto mb-3">
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Chicago</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Phoenix</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Las Vegas</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Sacramento</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Oklahoma City</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-4 col-lg-auto mb-3">
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Columbus</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">New Mexico</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Albuquerque</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Sacramento</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">New Orleans</a></li>
-              </ul>
-            </div>
-          </div>
+             
+           
           <hr class="text-900" />
           <div class="row">
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
-              <h5 class="lh-lg fw-bold text-white">COMPANY</h5>
+              <h5 class="lh-lg fw-bold text-white">Tentang Kami</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">About Us</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Team</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Careers</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">blog</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Tentang Warung Makan Septiya</a></li>
+                <li class="lh-lg">
+  <a class="text-200 text-decoration-none" href="tim-kami.html">
+  Tim Kami
+</a>
+
+
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Karier</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">blog & Cerita rasa</a></li>
+                <li class="lh-lg">
+    <a class="text-200 text-decoration-none" 
+       href="https://www.google.com/maps?q=Jl.+Raya,+Wates,+Ranuagung,+Kec.+Tiris,+Kabupaten+Probolinggo,+Jawa+Timur+67287" 
+       target="_blank">
+      Lihat Lokasi di Google Maps
+    </a>
+  </li>
               </ul>
             </div>
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2 col-lg-3 mb-3">
-              <h5 class="lh-lg fw-bold text-white">CONTACT</h5>
+              <h5 class="lh-lg fw-bold text-white">Kontak</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Help &amp; Support</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Partner with us </a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Ride with us</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Ride with us</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Bantuan & Dukungan</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Kerja Sama Usaha</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Jadi Mitra Warung</a></li>
+                <li class="lh-lg">
+  <a class="text-200 text-decoration-none" 
+     href="https://forms.gle/ffXk3D4Nuniyxgy29" 
+     target="_blank">
+    Kirim Masukan
+  </a>
+</li>
               </ul>
             </div>
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
-              <h5 class="lh-lg fw-bold text-white">LEGAL</h5>
+              <h5 class="lh-lg fw-bold text-white">KEBIJAKAN</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Terms &amp; Conditions</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Refund &amp; Cancellation</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Privacy Policy</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Cookie Policy</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Syarat & Ketentuan</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Pengembalian & Pembatalan</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Kebijakan Privasi
+
+                </a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Kebijakan Cookie</a></li>
               </ul>
             </div>
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
-              <h5 class="lh-lg fw-bold text-white">LEGAL</h5>
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Terms &amp; Conditions</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Refund &amp; Cancellation</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Privacy Policy</a></li>
+             
               </ul>
             </div>
             <div class="col-12 col-md-8 col-lg-6 col-xxl-4">
-              <h5 class="lh-lg fw-bold text-500">FOLLOW US</h5>
-              <div class="text-start my-3"> <a href="#!">
-                  <svg class="svg-inline--fa fa-instagram fa-w-14 fs-2 me-2" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path fill="#BDBDBD" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-                  </svg></a><a href="#!">
-                  <svg class="svg-inline--fa fa-facebook fa-w-16 fs-2 mx-2" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path fill="#BDBDBD" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
-                  </svg></a><a href="#!">
-                  <svg class="svg-inline--fa fa-twitter fa-w-16 fs-2 mx-2" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                    <path fill="#BDBDBD" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
-                  </svg></a></div>
-              <h3 class="text-500 my-4">Receive exclusive offers and <br />discounts in your mailbox</h3>
+              <h5 class="lh-lg fw-bold text-500">Ikuti Kami</h5>
+             <div class="text-start my-3">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/sy.rameq" target="_blank">
+    <svg class="svg-inline--fa fa-instagram fa-w-14 fs-2 me-2" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="#BDBDBD" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+    </svg>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/people/Hii-Septia" target="_blank">
+    <svg class="svg-inline--fa fa-facebook fa-w-16 fs-2 mx-2" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="#BDBDBD" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+    </svg>
+  </a>
+</div>
+              <h3 class="text-500 my-4">Terima penawaran  <br />dan diskon eksklusif di kotak masuk anda</h3>
               <div class="row input-group-icon mb-5">
-                <div class="col-auto"><i class="fas fa-envelope input-box-icon text-500 ms-3"></i>
-                  <input class="form-control input-box bg-800 border-0" type="email" placeholder="Enter Email" aria-label="email" />
+                <div class="col-auto"><i class="fab fa-whatsapp input-box-icon text-500 ms-3"></i>
+                  <input class="form-control input-box bg-800 border-0" type="email" placeholder="Masukkan Nomor" aria-label="email" />
                 </div>
                 <div class="col-auto">
-                  <button class="btn btn-primary" type="submit">Subscribe</button>
+                  <button class="btn btn-primary" type="submit">Kirim Pesan</button>
                 </div>
               </div>
             </div>
@@ -1058,7 +1498,7 @@
           <hr class="border border-800" />
           <div class="row flex-center pb-3">
             <div class="col-md-6 order-0">
-              <p class="text-200 text-center text-md-start">All rights Reserved &copy; Your Company, 2021</p>
+              <p class="text-200 text-center text-md-start">All rights Reserved &copy; Warung Makan Septiya, 2025</p>
             </div>
             <div class="col-md-6 order-1">
               <p class="text-200 text-center text-md-end"> Kelompok ;
@@ -1075,6 +1515,7 @@
 
 
     </main>
+    
     <!-- ===============================================-->
     <!--    End of Main Content-->
     <!-- ===============================================-->
@@ -1091,7 +1532,42 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="vendors/fontawesome/all.min.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="js/lokasi.js"></script>
+    <script src="assets/js/search.js"></script>
+   <script>
+  function updateStatusWarung() {
+    const now = new Date();
+    const jam = now.getHours();
+    const menit = now.getMinutes().toString().padStart(2, '0');
+    const detik = now.getSeconds().toString().padStart(2, '0');
 
+    // Tampilkan jam sekarang
+    document.getElementById("jam-sekarang").innerText = `${jam}:${menit}:${detik} WIB`;
+
+    // Logika status buka/istirahat/tutup
+    let status = "";
+    if ((jam >= 7 && jam < 11) || (jam === 11 && menit === "00")) {
+      status = "<strong>BUKA</strong>";
+    } else if ((jam === 11 && menit > "00") || (jam === 12 && menit === "00")) {
+      status = "<strong>ISTIRAHAT</strong>";
+    } else if (jam >= 12 && jam < 18) {
+      status = "<strong>BUKA</strong>";
+    } else {
+      status = "<strong>TUTUP <br>kembali besok ya!</strong> ";
+    }
+
+    // Tampilkan status
+    document.getElementById("status-warung").innerHTML = "Status Warung: " + status;
+  }
+
+  // Jalankan fungsi setiap 1 detik
+  setInterval(updateStatusWarung, 1000);
+  updateStatusWarung(); // Panggil sekali saat halaman dimuat
+</script>
+
+
+
+    
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&amp;display=swap" rel="stylesheet">
   </body>
 
